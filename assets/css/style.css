@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
+#demo{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+}
+
+#demo2{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+}
