@@ -1,13 +1,62 @@
-var button = document.querySelector('#btn');
+//variables for each page//
+var page0 = document.querySelector("#page0");
+var page1 = document.querySelector("#page1");
+var page2 = document.querySelector("#page2");
+var page3 = document.querySelector("#page3");
+var page4 = document.querySelector("#page4");
+var page5 = document.querySelector("#page5");
+var page6 = document.querySelector("#page6");
+var page7 = document.querySelector("#page7");
 
-// Attach the "click" event to your button
-button.addEventListener('click', function(){;
-    document.querySelector('#page1').className = "show";
-    document.querySelector('#page2').className = "hide";
-    document.querySelector('#page3').className = "hide";
-    document.querySelector('#page4').className = "hide";
-    document.querySelector('#page5').className = "hide";
-    document.querySelector('#page6').className = "hide";
-    document.querySelector('#page7').className = "hide";
-    document.querySelector('#page8').className = "hide";
+//functions for hiding & showing pages//
+page0.addEventListener('click', function(event){
+    if(event.target.nodeName === "BUTTON"){
+        page0.className="hide";
+        page1.className="show";
+    }
 });
+
+page1.addEventListener('click', function(event){
+    if(event.target.nodeName === "BUTTON"){
+        page1.className="hide";
+        page2.className="show";
+    }
+});
+
+page2.addEventListener('click', function(event){
+    if(event.target.nodeName === "BUTTON"){
+        page2.className="hide";
+        page3.className="show";
+    }
+});
+
+page3.addEventListener('click', function(event){
+    if(event.target.nodeName === "BUTTON"){
+        page3.className="hide";
+        page4.className="show";
+    }
+});
+
+page4.addEventListener('click', function(event){
+    if(event.target.nodeName === "BUTTON"){
+        page4.className="hide";
+        page5.className="show";
+    }
+});
+
+page5.addEventListener('click', function(event){
+    if(event.target.nodeName === "BUTTON"){
+        page5.className="hide";
+        page6.className="show";
+    }
+});
+
+page6.addEventListener('click', function(event){
+    if(event.target.nodeName === "BUTTON"){
+        page6.className="hide";
+        page7.className="show";
+    }
+});
+
+
+

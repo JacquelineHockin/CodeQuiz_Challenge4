@@ -15,14 +15,13 @@ html, body{
 .hide{
     display:none;
 }
-#demo{
+#page0,page1,page2,page3,page4,page5,page6,page7{
     height: 100px;
     width: 100px;
     background-color: white;
 }
 
-#demo2{
-    height: 100px;
-    width: 100px;
-    background-color: white;
-}
+
+
+
+
