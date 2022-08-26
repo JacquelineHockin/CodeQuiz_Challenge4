@@ -72,9 +72,33 @@ function timer(){
 }
 
 //function for right or wrong answers//
-// page0.addEventListener('click', function(event){
-// if(event.target.)
-// });
+
+var correct = document.querySelectorAll(".correct");
+var correctText = document.getElementById("correct");
+
+for (var i = 0; i < correct.length; i++) {
+    correct[i].addEventListener('click', function(){
+        correctText.className = "show";
+        setTimeout(function(){
+            correctText.className = "hide";
+        }, 1000);
+    });
+}
+
+
+var wrong = document.querySelectorAll(".wrong");
+var wrongText = document.getElementById("wrong");
+
+for (var i = 0; i < wrong.length; i++) {
+    wrong[i].addEventListener('click', function(){
+        wrongText.className = "show";
+        setTimeout(function(){
+            wrongText.className = "hide";
+        }, 1000);
+    });
+}
+
+
 
 
 
