@@ -58,5 +58,35 @@ page6.addEventListener('click', function(event){
     }
 });
 
+//function for quiz timer//
+var time = 75;
+
+document.getElementById("btn").onclick = timer
+
+function timer(){
+    setInterval(function(){
+        if(time>0){
+            time--;
+            document.getElementById("countdown").innerHTML=time}
+    }, 1000)
+}
+
+//function for right or wrong answers//
+// page0.addEventListener('click', function(event){
+// if(event.target.)
+// });
 
 
+
+
+
+
+// var myFunction = function(){
+//     if(time>0){
+//         number--;
+//         document.getElementById("countdown").innerHTML=time}
+// };
+
+// function timer(){
+//     setInterval(myFunction, 1000)
+// }
