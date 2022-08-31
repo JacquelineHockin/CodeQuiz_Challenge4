@@ -1,27 +1,97 @@
-*{
-    margin: 0;
-    padding: 0;
+/* Display settings to show one page at a time */
+.show {
+  display: block;
+  padding-left: 400px;
+  padding-right: 400px;
+  text-align: left;
 }
 
-html, body{
-    height: 100%;
-    width: 100%;
+.hide {
+  display: none;
 }
 
-button{
-  display:block;  
+/* Background color */
+body {
+  padding: 0px;
+  background-color: slateblue;
 }
 
-.show{
-    display:block;
+/* Main title text on page */
+h1 {
+  text-align: left;
+  font-size: 60px;
+  margin: 10px;
 }
 
-.hide{
-    display:none;
+/* Enlarge paragraph text on page0 */
+#page0instructions {
+  font-size: 25px;
+  margin: 20px;
 }
 
+/* Enlarge button text and add color */
+button {
+  display: block;
+  font-size: large;
+  padding: 10px;
+  background-color: lightsteelblue;
+  border-color: lightsteelblue;
+}
 
+#startBtn {
+  font-size: large;
+  padding: 10px;
+  background-color: lightsteelblue;
+  border-color: lightsteelblue;
+}
+.centerBtn {
+  padding-left: 250px;
+}
 
+/* Make correct and wrong popup messages larger */
+#correct {
+  font-size: 40px;
+  text-align: left;
+  color: rgb(84, 149, 84);
+}
 
+#wrong {
+  font-size: 40px;
+  text-align: left;
+  color: rgb(197, 105, 105);
+}
 
+/* Make countdown number bigger and in a more visible color*/
+#countdown {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
 
+/* Content container
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+} */
+
+/* html,
+body {
+  height: 100%;
+  width: 100%;
+} */
+
+/* Page header box */
+/* header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+} */
+
+/* Margin and Padding to space out items on page
+body * {
+  margin: 5px;
+  padding: 5px;
+} */

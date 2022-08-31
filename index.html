@@ -1,97 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <div id="countdown"></div>
-    
-    
+
+    <p id="correct" class="hide">Correct:)</p>
+    <p id="wrong" class="hide">Wrong:(</p>
+
     <div id="page0" class="show">
-        <button id="btn" type="button">Start Quiz</button>
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-            Try to answer the following code-related questions within the time limit.
-            Keep in mind that incorrect answers will penalize your score/time 
-            by ten seconds!
-        </p>
+      <h1>Coding Quiz Challenge</h1>
+      <p id="page0instructions">
+        Try to answer the following code-related questions within the time
+        limit. Keep in mind that incorrect answers will penalize your score/time
+        by ten seconds!
+      </p>
+      <div class="centerBtn">
+        <button id="startBtn" type="button">Start Quiz</button>
+      </div>
     </div>
 
     <div id="page1" class="hide">
-        <h1>Commonly used data types DO Not Include:</h1>
-            <button class="wrong">1. strings</button>
-            <button class="wrong">2. booleans</button>
-            <button class="correct">3. alerts</button>
-            <button class="wrong">4. numbers</button>
+      <h1>Commonly used data types DO Not Include:</h1>
+      <button class="wrong">1. strings</button>
+      <button class="wrong">2. booleans</button>
+      <button class="correct">3. alerts</button>
+      <button class="wrong">4. numbers</button>
     </div>
 
     <div id="page2" class="hide">
-        <h1>The condition in an if / else statement is enclosed with _______.</h1>
-            <button class="wrong">1. quotes</button>
-            <button class="wrong">2. curly brackets</button>
-            <button class="correct">3. paranthesis</button>
-            <button class="wrong">4. square brackets</button>
+      <h1>The condition in an if / else statement is enclosed with _______.</h1>
+      <button class="wrong">1. quotes</button>
+      <button class="wrong">2. curly brackets</button>
+      <button class="correct">3. paranthesis</button>
+      <button class="wrong">4. square brackets</button>
     </div>
 
     <div id="page3" class="hide">
-        <h1>Arrays in JavaScript can be used to store _______.</h1>
-            <button class="wrong">1. numbers and strings</button>
-            <button class="wrong">2. other arrays</button>
-            <button class="wrong">3. booleans</button>
-            <button class="correct">4. all of the above</button>
+      <h1>Arrays in JavaScript can be used to store _______.</h1>
+      <button class="wrong">1. numbers and strings</button>
+      <button class="wrong">2. other arrays</button>
+      <button class="wrong">3. booleans</button>
+      <button class="correct">4. all of the above</button>
     </div>
 
     <div id="page4" class="hide">
-        <h1>Arrays in JavaScript are enclosed with _______.</h1>
-            <button class="correct">1. square brackets</button>
-            <button class="wrong">2. curly brackets</button>
-            <button class="wrong">3. quotes</button>
-            <button class="wrong">4. parenthesis</button>
+      <h1>Arrays in JavaScript are enclosed with _______.</h1>
+      <button class="correct">1. square brackets</button>
+      <button class="wrong">2. curly brackets</button>
+      <button class="wrong">3. quotes</button>
+      <button class="wrong">4. parenthesis</button>
     </div>
 
     <div id="page5" class="hide">
-        <h1>String values must be enclosed within _______ when being assigned to variables.</h1>
-        <button class="wrong">1. commas</button>
-        <button class="wrong">2. curly brackets</button>
-        <button class="correct">3. quotes</button>
-        <button class="wrong">4. parenthesis</button>
+      <h1>
+        String values must be enclosed within _______ when being assigned to
+        variables.
+      </h1>
+      <button class="wrong">1. commas</button>
+      <button class="wrong">2. curly brackets</button>
+      <button class="correct">3. quotes</button>
+      <button class="wrong">4. parenthesis</button>
     </div>
 
     <div id="page6" class="hide">
-        <h1>A very useful tool used during development and debugging for printing content to the debugger is:</h1>
-            <button class="wrong">1. JavaScript</button>
-            <button class="wrong">2. terminal/bash</button>
-            <button class="wrong">3. for loops</button>
-            <button class="correct">4. console.log</button>
+      <h1>
+        A very useful tool used during development and debugging for printing
+        content to the debugger is:
+      </h1>
+      <button class="wrong">1. JavaScript</button>
+      <button class="wrong">2. terminal/bash</button>
+      <button class="wrong">3. for loops</button>
+      <button class="correct">4. console.log</button>
     </div>
 
     <div id="page7" class="hide">
-        <h1>All done!</h1>
-        <h2>Your final score is ______.</h2>
-        <h3>Enter initials:</h3>
-        <button>Submit</button>
-
+      <h1>All done!</h1>
+      <h2 id="score"></h2>
+      <h3>Enter initials:</h3>
+      <input type="text" />
+      <button id="submit">Submit</button>
     </div>
 
-    <p id="correct" class="hide">Correct:)</p>
-    <p id="wrong" class="hide">Wrong:( </p>
-
-    
-
-
-        
-
-
-
-
-
-
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-

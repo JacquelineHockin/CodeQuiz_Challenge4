@@ -9,108 +9,150 @@ var page6 = document.querySelector("#page6");
 var page7 = document.querySelector("#page7");
 
 //functions for hiding & showing pages//
-page0.addEventListener('click', function(event){
-    if(event.target.nodeName === "BUTTON"){
-        page0.className="hide";
-        page1.className="show";
-    }
+page0.addEventListener("click", function (event) {
+  if (event.target.nodeName === "BUTTON") {
+    page0.className = "hide";
+    page1.className = "show";
+  }
 });
 
-page1.addEventListener('click', function(event){
-    if(event.target.nodeName === "BUTTON"){
-        page1.className="hide";
-        page2.className="show";
-    }
+page1.addEventListener("click", function (event) {
+  if (event.target.nodeName === "BUTTON") {
+    page1.className = "hide";
+    page2.className = "show";
+  }
 });
 
-page2.addEventListener('click', function(event){
-    if(event.target.nodeName === "BUTTON"){
-        page2.className="hide";
-        page3.className="show";
-    }
+page2.addEventListener("click", function (event) {
+  if (event.target.nodeName === "BUTTON") {
+    page2.className = "hide";
+    page3.className = "show";
+  }
 });
 
-page3.addEventListener('click', function(event){
-    if(event.target.nodeName === "BUTTON"){
-        page3.className="hide";
-        page4.className="show";
-    }
+page3.addEventListener("click", function (event) {
+  if (event.target.nodeName === "BUTTON") {
+    page3.className = "hide";
+    page4.className = "show";
+  }
 });
 
-page4.addEventListener('click', function(event){
-    if(event.target.nodeName === "BUTTON"){
-        page4.className="hide";
-        page5.className="show";
-    }
+page4.addEventListener("click", function (event) {
+  if (event.target.nodeName === "BUTTON") {
+    page4.className = "hide";
+    page5.className = "show";
+  }
 });
 
-page5.addEventListener('click', function(event){
-    if(event.target.nodeName === "BUTTON"){
-        page5.className="hide";
-        page6.className="show";
-    }
+page5.addEventListener("click", function (event) {
+  if (event.target.nodeName === "BUTTON") {
+    page5.className = "hide";
+    page6.className = "show";
+  }
 });
 
-page6.addEventListener('click', function(event){
-    if(event.target.nodeName === "BUTTON"){
-        page6.className="hide";
-        page7.className="show";
-    }
-});
-
-//function for quiz timer//
+//function for quiz timer//  //when time runs out, the game is over & page7 appears with final score//
 var time = 75;
+var score = 0;
 
-document.getElementById("btn").onclick = timer
+page6.addEventListener("click", function (event) {
+  if (event.target.nodeName === "BUTTON") {
+    page6.className = "hide";
+    page7.className = "show";
+    // Saves score, stops timer, show the final score //
+    score = time;
+    document.getElementById("score").innerHTML =
+      "Nice! Your Final score is " + score;
+    time = 0;
+  }
+});
 
-function timer(){
-    setInterval(function(){
-        if(time>0){
-            time--;
-            document.getElementById("countdown").innerHTML=time}
-    }, 1000)
+document.getElementById("btn").onclick = timer;
+
+function timer() {
+  setInterval(function () {
+    if (time > 0) {
+      time--;
+      document.getElementById("countdown").innerHTML = time;
+    } else {
+      //if time <=0 //
+      page0.className = "hide";
+      page1.className = "hide";
+      page2.className = "hide";
+      page3.className = "hide";
+      page4.className = "hide";
+      page5.className = "hide";
+      page6.className = "hide";
+      page7.className = "show";
+    }
+  }, 1000);
 }
 
 //function for right or wrong answers//
 
 var correct = document.querySelectorAll(".correct");
 var correctText = document.getElementById("correct");
+var correctAnswers = 0;
 
 for (var i = 0; i < correct.length; i++) {
-    correct[i].addEventListener('click', function(){
-        correctText.className = "show";
-        setTimeout(function(){
-            correctText.className = "hide";
-        }, 1000);
-    });
+  correct[i].addEventListener("click", function () {
+    correctAnswers++;
+    console.log(correctAnswers);
+    correctText.className = "show";
+    setTimeout(function () {
+      correctText.className = "hide";
+    }, 1000);
+  });
 }
-
 
 var wrong = document.querySelectorAll(".wrong");
 var wrongText = document.getElementById("wrong");
 
 for (var i = 0; i < wrong.length; i++) {
-    wrong[i].addEventListener('click', function(){
-        wrongText.className = "show";
-        setTimeout(function(){
-            wrongText.className = "hide";
-        }, 1000);
-    });
+  wrong[i].addEventListener("click", function () {
+    wrongText.className = "show";
+    setTimeout(function () {
+      time = time - 10;
+      wrongText.className = "hide";
+    }, 1000);
+  });
 }
 
+// have user enter their initials...//
 
+submit.addEventListener("click", function () {
+  var inputValue = document.querySelector("input").value;
+  var localStorageInitials = "initials";
+  var localStorageValues = localStorage.getItem(localStorageInitials);
+  var userScore = {
+    [inputValue]: score,
+  };
+  if (localStorageValues) {
+    localStorageValues.push(userScore);
+  } else {
+    localStorage.setItem(localStorageInitials, JSON.stringify([userScore]));
+  }
+  console.log("input.value", input.value);
+  localStorage.setItem(localStorageInitials, input.value);
+});
 
+//...and save their final score to local storage//
 
+// localStorage.setItem("JC", "J.C.");
 
+// function saveHighScore(score, highScores) {
+//   const initials = prompt("You got a highscore! Enter name:");
+//   const newScore = { score, name };
 
+//   // 1. Add to list
+//   highScores.push(newScore);
 
+//   // 2. Sort the list
+//   highScores.sort((a, b) => b.score - a.score);
 
-// var myFunction = function(){
-//     if(time>0){
-//         number--;
-//         document.getElementById("countdown").innerHTML=time}
-// };
+//   // 3. Select new list
+//   highScores.splice(NO_OF_HIGH_SCORES);
 
-// function timer(){
-//     setInterval(myFunction, 1000)
+//   // 4. Save to local storage
+//   localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
 // }
