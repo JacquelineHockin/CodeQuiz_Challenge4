@@ -107,3 +107,15 @@ button {
   font-family: fantasy;
   text-align: center;
 }
+
+/* centering/formatting page8 */
+#page8HighScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page8HighScore p {
+  font-size: 33px;
+  margin: 22px;
+}

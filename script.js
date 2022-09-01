@@ -1,3 +1,5 @@
+console.log("blue");
+
 //variables for each page//
 var page0 = document.querySelector("#page0");
 var page1 = document.querySelector("#page1");
@@ -7,6 +9,7 @@ var page4 = document.querySelector("#page4");
 var page5 = document.querySelector("#page5");
 var page6 = document.querySelector("#page6");
 var page7 = document.querySelector("#page7");
+var page8 = document.querySelector("#page8Container");
 
 //functions for hiding & showing pages//
 page0.addEventListener("click", function (event) {
@@ -62,15 +65,23 @@ page6.addEventListener("click", function (event) {
     // Saves score, stops timer, show the final score //
     score = time;
     document.getElementById("score").innerHTML =
-      "Nice! Your Final score is " + score;
+      "Nice! Your Final score is: " + score;
     time = 0;
+  }
+});
+
+//add event listener for page7//
+page7.addEventListener("click", function (event) {
+  if (event.target === document.getElementById("submit")) {
+    page7.className = "hide";
+    page8.className = "show";
   }
 });
 
 document.getElementById("startBtn").onclick = timer;
 
 function timer() {
-  setInterval(function () {
+  var timerInterval = setInterval(function () {
     if (time > 0) {
       time--;
       document.getElementById("countdown").innerHTML = time;
@@ -84,6 +95,8 @@ function timer() {
       page5.className = "hide";
       page6.className = "hide";
       page7.className = "show";
+
+      clearInterval(timerInterval);
     }
   }, 1000);
 }
@@ -118,21 +131,6 @@ for (var i = 0; i < wrong.length; i++) {
   });
 }
 
-//save user initials and scores to local storage//
-
-var submit = document.querySelector("#submit");
-submit.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  var userInitials = document.getElementById("saveInitials").value;
-
-  localStorage.setItem("initials", userInitials);
-  localStorage.setItem("score", score);
-});
-
-// <!-- (if user top scores need to be displayed on a page) Step by step guide: Create a container div for all high scores. 10 divs under title. 2 <p> tags-- one will hold the initials and the other will hold the score.
-// 10 divs total, each with 2 <p> tags. In js we create 10 divs and 20 <p> tags -->
-
 var submit = document.querySelector("#submit");
 submit.addEventListener("click", function (e) {
   e.preventDefault();
@@ -143,21 +141,28 @@ submit.addEventListener("click", function (e) {
     score: score,
   };
   localStorage.setItem(localStorageName, JSON.stringify(userScore));
-  var highScoreSpan = document.getElementById("highScoreSpan");
+  var userHighScore = document.getElementById("userHighScore");
   var localStorageValues = JSON.parse(localStorage.getItem(localStorageName));
   console.log("localStorageValues", localStorageValues);
-  highScoreSpan.textContent =
+  userHighScore.textContent =
     "" + localStorageValues.initials + ", " + localStorageValues.score;
 });
-var clearScores = document.getElementById("clearScores");
-clearScores.addEventListener("click", function () {
-  localStorage.clear();
-  highScoreSpan.textContent = "";
-});
-var goBack = document.getElementById("goBack");
-goBack.addEventListener("click", function () {
-  pageHighScores.className = "hide";
+
+//creating event listeners to make the buttons on page8 work//
+var tryAgain = document.getElementById("tryAgain");
+var page8 = document.querySelector("#page8Container");
+tryAgain.addEventListener("click", function () {
+  page8.className = "hide";
   page0.className = "show";
   time = 75;
+  // when you click on the try again button, it sets the input value and countdown to an empty string
   document.getElementById("countdown").innerHTML = "";
+  document.getElementById("saveInitials").value = "";
+});
+// when you click on the clear high score button, it empties the user's high score and
+// sets the input value and countdown to an empty string
+var clearHighScore = document.getElementById("clearHighScore");
+clearHighScore.addEventListener("click", function () {
+  localStorage.clear();
+  userHighScore.textContent = "";
 });
