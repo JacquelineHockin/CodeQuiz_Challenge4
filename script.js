@@ -118,82 +118,7 @@ for (var i = 0; i < wrong.length; i++) {
   });
 }
 
-// have user enter their initials...//
-
-// submit.addEventListener("click", function () {
-//   var inputValue = document.querySelector("input").value;
-//   var localStorageInitials = "initials";
-//   var localStorageValues = localStorage.getItem(localStorageInitials);
-//   var userScore = {
-//     [inputValue]: score,
-//   };
-//   if (localStorageValues) {
-//     localStorageValues.push(userScore);
-//   } else {
-//     localStorage.setItem(localStorageInitials, JSON.stringify([userScore]));
-//   }
-//   console.log("input.value", input.value);
-//   localStorage.setItem(localStorageInitials, input.value);
-// });
-
-//...and save their final score to local storage//
-
-// localStorage.setItem("JC", "J.C.");
-
-// function saveHighScore(score, highScores) {
-//   const initials = prompt("You got a highscore! Enter name:");
-//   const newScore = { score, name };
-
-//   // 1. Add to list
-//   highScores.push(newScore);
-
-//   // 2. Sort the list
-//   highScores.sort((a, b) => b.score - a.score);
-
-//   // 3. Select new list
-//   highScores.splice(NO_OF_HIGH_SCORES);
-
-//   // 4. Save to local storage
-//   localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
-// }
-
-//MJ local storage//
-
-// var submit = document.querySelector("#submit");
-// submit.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   var inputValue = document.getElementById("saveInitials").value;
-//   var localStorageName = "initials";
-//   var localStorageValues = localStorage.getItem(localStorageName);
-//   console.log("inputValue", inputValue);
-//   var userScore = {
-//     [inputValue]: score,
-//   };
-//   console.log("userScore", userScore);
-//   if (localStorageValues) {
-//     var currentValues = JSON.parse(localStorageValues);
-//     console.log("before push", currentValues);
-//     currentValues.push(userScore);
-//     console.log("after push", currentValues);
-//     localStorage.setItem(localStorageName, JSON.stringify(currentValues));
-//   } else {
-//     localStorage.setItem(localStorageName, JSON.stringify([userScore]));
-//   }
-// });
-
-// //Frankenstein local storage//
-
-// // function renderLastRegistered() {
-// //   var initials = localStorage.getItem("initials");
-// //   var score = localStorage.getItem("score");
-// // }
-
-// // if (!email // !password) {
-// //     return;
-// // }
-
-// userInitialsSpan.textContent = initials;
-// userInitialsScore.textContent = score;
+//save user initials and scores to local storage//
 
 var submit = document.querySelector("#submit");
 submit.addEventListener("click", function (event) {
@@ -204,19 +129,3 @@ submit.addEventListener("click", function (event) {
   localStorage.setItem("initials", userInitials);
   localStorage.setItem("score", score);
 });
-
-//MJ local storage//
-
-//   var localStorageName = "initials";
-//   var localStorageValues = localStorage.getItem(localStorageName);
-//   var userScore = {
-//     [inputValue]: score,
-//   };
-//   if (localStorageValues) {
-//     var currentValues = JSON.parse(localStorageValues);
-//     currentValues.push(userScore);
-//     localStorage.setItem(localStorageName, JSON.stringify(currentValues));
-//   } else {
-//     localStorage.setItem(localStorageName, JSON.stringify([userScore]));
-//   }
-// });

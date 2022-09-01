@@ -29,7 +29,7 @@ h1 {
   margin: 20px;
 }
 
-/* Enlarge button text and add color */
+/* Enlarge button text and add color within buttons */
 button {
   display: block;
   font-size: large;
@@ -61,7 +61,7 @@ button {
   color: rgb(197, 105, 105);
 }
 
-/* Make countdown number bigger and in a more visible color*/
+/* Make countdown number bigger and in a more visible color */
 #countdown {
   text-align: center;
   font-size: 30px;
@@ -74,6 +74,8 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+/* page7 requires more css formatting specifications because the default for the other pages did not look clean for page7 */
 
 #page7 h1 {
   text-align: center;
@@ -105,31 +107,3 @@ button {
   font-family: fantasy;
   text-align: center;
 }
-
-/* Content container
-main {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-} */
-
-/* html,
-body {
-  height: 100%;
-  width: 100%;
-} */
-
-/* Page header box */
-/* header {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-} */
-
-/* Margin and Padding to space out items on page
-body * {
-  margin: 5px;
-  padding: 5px;
-} */
