@@ -129,3 +129,35 @@ submit.addEventListener("click", function (event) {
   localStorage.setItem("initials", userInitials);
   localStorage.setItem("score", score);
 });
+
+// <!-- (if user top scores need to be displayed on a page) Step by step guide: Create a container div for all high scores. 10 divs under title. 2 <p> tags-- one will hold the initials and the other will hold the score.
+// 10 divs total, each with 2 <p> tags. In js we create 10 divs and 20 <p> tags -->
+
+var submit = document.querySelector("#submit");
+submit.addEventListener("click", function (e) {
+  e.preventDefault();
+  var inputValue = document.getElementById("saveInitials").value;
+  var localStorageName = "userScore";
+  var userScore = {
+    initials: inputValue,
+    score: score,
+  };
+  localStorage.setItem(localStorageName, JSON.stringify(userScore));
+  var highScoreSpan = document.getElementById("highScoreSpan");
+  var localStorageValues = JSON.parse(localStorage.getItem(localStorageName));
+  console.log("localStorageValues", localStorageValues);
+  highScoreSpan.textContent =
+    "" + localStorageValues.initials + ", " + localStorageValues.score;
+});
+var clearScores = document.getElementById("clearScores");
+clearScores.addEventListener("click", function () {
+  localStorage.clear();
+  highScoreSpan.textContent = "";
+});
+var goBack = document.getElementById("goBack");
+goBack.addEventListener("click", function () {
+  pageHighScores.className = "hide";
+  page0.className = "show";
+  time = 75;
+  document.getElementById("countdown").innerHTML = "";
+});
