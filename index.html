@@ -11,9 +11,6 @@
   <body>
     <div id="countdown"></div>
 
-    <p id="correct" class="hide">Correct:)</p>
-    <p id="wrong" class="hide">Wrong:(</p>
-
     <div id="page0" class="show">
       <h1>Coding Quiz Challenge</h1>
       <p id="page0instructions">
@@ -83,11 +80,25 @@
     <div id="page7" class="hide">
       <h1>All done!</h1>
       <h2 id="score"></h2>
-      <h3>
-        Enter initials: <input type="text" id="initials" /><button id="submit">
-          Submit
-        </button>
-      </h3>
+      <div class="fieldAligner">
+        <h3>Enter initials:</h3>
+        <input type="text" id="saveInitials" />
+        <button id="submit">Submit</button>
+      </div>
+    </div>
+
+    <p id="correct" class="hide">Correct:)</p>
+    <p id="wrong" class="hide">Wrong:(</p>
+
+    <div>
+      <h2>
+        <title>High Score</title>
+        <!-- container div for all high scores. 
+                10 divs under title.
+            2 p tags to hold initial and the other will hold the score.
+        10 divs total, each with 2 p tags.
+    in js we create 10 divs and 20 p tags -->
+      </h2>
     </div>
 
     <script src="script.js"></script>

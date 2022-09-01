@@ -199,8 +199,24 @@ var submit = document.querySelector("#submit");
 submit.addEventListener("click", function (event) {
   event.preventDefault();
 
-  var userInitials = document.getElementById("initials").value;
+  var userInitials = document.getElementById("saveInitials").value;
 
   localStorage.setItem("initials", userInitials);
   localStorage.setItem("score", score);
 });
+
+//MJ local storage//
+
+//   var localStorageName = "initials";
+//   var localStorageValues = localStorage.getItem(localStorageName);
+//   var userScore = {
+//     [inputValue]: score,
+//   };
+//   if (localStorageValues) {
+//     var currentValues = JSON.parse(localStorageValues);
+//     currentValues.push(userScore);
+//     localStorage.setItem(localStorageName, JSON.stringify(currentValues));
+//   } else {
+//     localStorage.setItem(localStorageName, JSON.stringify([userScore]));
+//   }
+// });

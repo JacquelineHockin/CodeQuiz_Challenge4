@@ -69,6 +69,12 @@ button {
   margin-top: 50px;
 }
 
+.fieldAligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #page7 h1 {
   text-align: center;
   font-size: 60px;
@@ -83,13 +89,21 @@ button {
 
 #page7 h3 {
   font-size: 40px;
-  margin: 10px;
   text-align: center;
+  margin: -3px 5px 0 0;
 }
 
 #submit {
   display: inline-block;
   margin-left: 12px;
+}
+
+#saveInitials {
+  height: 40px;
+  width: 83px;
+  font-size: 37px;
+  font-family: fantasy;
+  text-align: center;
 }
 
 /* Content container
@@ -119,4 +133,3 @@ body * {
   margin: 5px;
   padding: 5px;
 } */
-
