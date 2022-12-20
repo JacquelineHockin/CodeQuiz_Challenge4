@@ -131,6 +131,7 @@ for (var i = 0; i < wrong.length; i++) {
   });
 }
 
+//saving to local storage//
 var submit = document.querySelector("#submit");
 submit.addEventListener("click", function (e) {
   e.preventDefault();

@@ -81,6 +81,7 @@ button {
   text-align: center;
   font-size: 60px;
   margin: 10px;
+  /* to make the code neater I could add page7 h3 within the #page7 bracket */
 }
 
 #page7 h2 {
