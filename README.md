@@ -4,9 +4,9 @@ This application is a timed and interactive quiz on coding fundamentals using Ja
 
 # Links
 
-Deployed Site Url: 
+Deployed Site Url: https://jacquelinehockin.github.io/Code_Quiz/
 
-## screenshot
+## Screenshots
 
 ![Screenshot 1](./assets/img/start%20quiz.png)
 ![Screenshot 2](./assets/img/wrong%20answer.png)
